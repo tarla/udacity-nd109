@@ -125,6 +125,13 @@ input("Press Enter to continue...")
 # We expect to see "Male", "Female" or "Equal" as answer.
 def most_popular_gender(data_list):
     answer = ""
+    male, female = tuple(count_gender(data_list))
+    if (male > female):
+        answer = "Male"
+    elif (female > male):
+        answer = "Female"
+    else:
+        answer = "Equal"
     return answer
 
 
