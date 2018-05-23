@@ -57,6 +57,8 @@ input("Press Enter to continue...")
 def column_to_list(data, index):
     column_list = []
     # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
+    for item in data:
+        column_list.append(item[index])
     return column_list
 
 
