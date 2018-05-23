@@ -78,6 +78,11 @@ input("Press Enter to continue...")
 # TODO: Count each gender. You should not use a function to do that.
 male = 0
 female = 0
+for data in data_list:
+    if (data[-2] == 'Male'):
+        male += 1
+    elif (data[-2] == 'Female'):
+        female += 1
 
 
 # Checking the result
