@@ -225,14 +225,16 @@ input("Press Enter to continue...")
 # TASK 10
 # Gender is easy because usually only have a few options. How about start_stations? How many options does it have?
 # TODO: Check types how many start_stations do we have using set()
-user_types = set()
+start_stations = set()
+for start_station in column_to_list(data_list, -5):
+    start_stations.add(start_station)
 
 print("\nTASK 10: Printing start stations:")
-print(len(user_types))
-print(user_types)
+print(len(start_stations))
+print(start_stations)
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
-assert len(user_types) == 582, "TASK 10: Wrong len of start stations."
+assert len(start_stations) == 582, "TASK 10: Wrong len of start stations."
 # -----------------------------------------------------
 
 input("Press Enter to continue...")
