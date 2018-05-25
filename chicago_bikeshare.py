@@ -285,12 +285,16 @@ input("Press Enter to continue...")
 # TODO: Create a function to count user types without hardcoding the types
 # so we can use this function with a different kind of data.
 print("Will you face it?")
-answer = "no"
+answer = "yes"
 
 def count_items(column_list):
-    item_types = []
-    count_items = []
-    return item_types, count_items
+    total = {}
+    for item in column_list:
+        if item in total.keys():
+            total[item] += 1
+        else:
+            total[item] = 1
+    return [*total.keys()], [*total.values()]
 
 
 if answer == "yes":
