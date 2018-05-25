@@ -56,6 +56,14 @@ input("Press Enter to continue...")
 # TASK 3
 # TODO: Create a function to add the columns(features) of a list in another list in the same order
 def column_to_list(data, index):
+    """
+    Returns all values from an index as a list.
+    Args:
+      param1: items list.
+      param2: index.
+    Returns:
+      List of values
+    """
     column_list = []
     # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
     for item in data:
@@ -100,6 +108,13 @@ input("Press Enter to continue...")
 # TODO: Create a function to count the genders. Return a list
 # Should return a list with [count_male, counf_female] (e.g., [10, 15] means 10 Males, 15 Females)
 def count_gender(data_list):
+    """
+    Counts gender from data list
+    Args:
+      param1: data list.
+    Returns:
+      List containing counts by gender
+    """
     male = 0
     female = 0
     for data in data_list:
@@ -125,6 +140,13 @@ input("Press Enter to continue...")
 # TODO: Create a function to get the most popular gender and print the gender as string.
 # We expect to see "Male", "Female" or "Equal" as answer.
 def most_popular_gender(data_list):
+    """
+    Returns most popular gender
+    Args:
+      param1: data list.
+    Returns:
+      Most popular gender title
+    """
     answer = ""
     male, female = tuple(count_gender(data_list))
     if (male > female):
@@ -162,6 +184,13 @@ input("Press Enter to continue...")
 print("\nTASK 7: Check the chart!")
 
 def count_type(data_list):
+    """
+    Counts type from data list
+    Args:
+      param1: data list.
+    Returns:
+      List containing counts by type
+    """
     customer = 0
     subscriber = 0
     for data in data_list:
@@ -241,15 +270,15 @@ input("Press Enter to continue...")
 # TASK 11
 # Go back and make sure you documented your functions. Explain the input, output and what it do. Example:
 # def new_function(param1: int, param2: str) -> list:
-"""
-Example function with annotations.
-Args:
-  param1: The first parameter.
-  param2: The second parameter.
-Returns:
-  List of X values
-
-"""
+# """
+# Example function with annotations.
+# Args:
+#   param1: The first parameter.
+#   param2: The second parameter.
+# Returns:
+#   List of X values
+#
+# """
 
 input("Press Enter to continue...")
 # TASK 12 - Challenge! (Optional)
