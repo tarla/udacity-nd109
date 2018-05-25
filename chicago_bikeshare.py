@@ -4,7 +4,7 @@
 # Here goes the imports
 import csv
 import matplotlib.pyplot as plt
-import numpy
+from functools import reduce
 
 # Let's read the data as a list
 print("Reading the document...")
@@ -232,12 +232,27 @@ input("Press Enter to continue...")
 # TODO: Find the Minimum, Maximum, Mean and Median trip duration.
 # You should not use ready functions to do that, like max() or min().
 trip_duration_list = [*map(lambda n: int(n), column_to_list(data_list, 2))]
-# trip_duration_list_as_float = numpy.array(trip_duration_list).astype(numpy.float)
 
-min_trip = numpy.min(trip_duration_list)
-max_trip = numpy.max(trip_duration_list)
-mean_trip = numpy.mean(trip_duration_list)
-median_trip = numpy.median(trip_duration_list)
+def my_median(list):
+    """
+    Calculates the median.
+    Args:
+      param1: list.
+    Returns:
+      median
+    """
+    list.sort()
+    if len(list) % 2 == 1:
+        return list[len(list) // 2]
+    else:
+        length = len(list) // 2
+        return sum(list[length - 1:length + 1]) / 2
+
+
+min_trip = reduce(lambda current, next: current if current < next else next, trip_duration_list)
+max_trip = reduce(lambda current, next: current if current > next else next, trip_duration_list)
+mean_trip = float(sum(trip_duration_list) / len(trip_duration_list))
+median_trip = my_median(trip_duration_list)
 
 
 print("\nTASK 9: Printing the min, max, mean and median")
